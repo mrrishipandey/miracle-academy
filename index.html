@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Miracle Academy - Best Tuition Center in Jaipur</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Alpine.js for interactive components -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#f59e0b',
+                        accent: '#0ea5e9'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-[Poppins] bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-12 w-auto" src="https://themiracleacademy.in/wp-content/uploads/2021/07/footer-link.png" alt="Miracle Academy">
+                        <span class="ml-3 text-xl font-bold text-primary hidden md:block">The Miracle Academy</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+                            About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded mt-2 py-2 w-48 z-20">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Miracle Academy</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Miracle Helping Foundation</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+                            Courses <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded mt-2 py-2 w-48 z-20">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">RBSE</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">CBSE</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">NEET</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">JEE</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Gallery</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Career Counselling</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Scholarship</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Notes</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <div class="pt-2 border-t border-gray-200">
+                    <button class="text-gray-700 hover:text-primary font-medium w-full text-left flex justify-between items-center" id="about-mobile-button">
+                        About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="about-mobile-menu" class="hidden pl-4 mt-2 space-y-2">
+                        <a href="#" class="block py-1 text-gray-700 hover:text-primary">About Miracle Academy</a>
+                        <a href="#" class="block py-1 text-gray-700 hover:text-primary">Miracle Helping Foundation</a>
+                    </div>
+                </div>
+                <div class="pt-2 border-t border-gray-200">
+                    <button class="text-gray-700 hover:text-primary font-medium w-full text-left flex justify-between items-center" id="courses-mobile-button">
+                        Courses <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="courses-mobile-menu" class="hidden pl-4 mt-2 space-y-2">
+                        <a href="#" class="block py-1 text-gray-700 hover:text-primary">RBSE</a>
+                        <a href="#" class="block py-1 text-gray-700 hover:text-primary">CBSE</a>
+                        <a href="#" class="block py-1 text-gray-700 hover:text-primary">NEET</a>
+                        <a href="#" class="block py-1 text-gray-700 hover:text-primary">JEE</a>
+                    </div>
+                </div>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Gallery</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Contact</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Career Counselling</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Scholarship</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Notes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                        Best Tuition Center In Jaipur
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-600">
+                        The Miracle Academy is a renowned institution offering tuition classes in Vidhyadhar Nagar, Jaipur. We Assurance top-quality tuition services for CBSE, RBSE, NEET, and JEE, catering to all classes and subjects.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-center">
+                            Book a Free Demo Class
+                        </a>
+                        <a href="#" class="bg-white hover:bg-gray-100 text-primary border-2 border-primary font-bold py-3 px-8 rounded-lg transition duration-300 text-center">
+                            Know More
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/Untitled-design.png" alt="Miracle Academy" class="rounded-lg shadow-xl max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Our Courses</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    We offer comprehensive coaching for various boards and competitive exams
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/School-256-2.png" alt="CBSE" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">CBSE</h3>
+                    <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn More</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/School-256-2.png" alt="RBSE" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">RBSE</h3>
+                    <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn More</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/School-256-2.png" alt="NEET" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">NEET</h3>
+                    <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn More</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/School-256-2.png" alt="JEE" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">JEE</h3>
+                    <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/Untitled-design.png" alt="About Miracle Academy" class="rounded-lg shadow-xl max-w-full h-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800">About The Miracle Academy</h2>
+                    <h3 class="mt-2 text-xl text-primary font-semibold">Best Tuition Center in Jaipur - Vidhyadhar Nagar, Ambabari & Murlipura</h3>
+                    <p class="mt-4 text-gray-600">
+                        At Miracle Academy, we prioritise your child's future and it is our utmost focus. For over two decades, our primary goal has been to strike the perfect balance between knowledge and wisdom, personalised attention and group development, and the present and the future. We aim to shape your child into future leaders in various fields.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        Today, we are delighted to be recognised as the top coaching classes in Jaipur for NEET, JEE, RBSE, CBSE, Science & Commerce, and for class 6 to 12 as well. We prioritize the needs of our students and strive to deliver a service-oriented experience that is dedicated to achieving results.
+                    </p>
+                    <a href="#" class="mt-6 inline-block bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        Know More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/Trophy-gold-256.png" alt="Experience" class="w-20 h-20 mx-auto mb-4">
+                    <h3 class="text-3xl font-bold">10+ yrs</h3>
+                    <p class="mt-2 text-gray-200">Experiences</p>
+                </div>
+                <div class="p-6">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/reading-book1.png" alt="Students" class="w-20 h-20 mx-auto mb-4">
+                    <h3 class="text-3xl font-bold">2500+</h3>
+                    <p class="mt-2 text-gray-200">Students</p>
+                </div>
+                <div class="p-6">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/teacher-1.png" alt="Faculties" class="w-20 h-20 mx-auto mb-4">
+                    <h3 class="text-3xl font-bold">50+</h3>
+                    <p class="mt-2 text-gray-200">Faculties</p>
+                </div>
+                <div class="p-6">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/rating1.png" alt="Satisfied Parents" class="w-20 h-20 mx-auto mb-4">
+                    <h3 class="text-3xl font-bold">95%</h3>
+                    <p class="mt-2 text-gray-200">Satisfied Parents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievers Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Our Achievers</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Meet some of our top-performing students
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/3.png" alt="Kanak" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Kanak</h3>
+                    <p class="text-primary font-semibold">98% - 10th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/8.png" alt="Mahira" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Mahira</h3>
+                    <p class="text-primary font-semibold">92% - 10th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/5.png" alt="Akshara" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Akshara</h3>
+                    <p class="text-primary font-semibold">91.6% - 10th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/9.png" alt="Tejaswani" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Tejaswani</h3>
+                    <p class="text-primary font-semibold">95% - 10th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/7.png" alt="Joya" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Joya</h3>
+                    <p class="text-primary font-semibold">93.8% - 10th CBSE</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-8">
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/6.png" alt="Komal" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Komal</h3>
+                    <p class="text-primary font-semibold">98% - 12th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/1.png" alt="Praveen" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Praveen</h3>
+                    <p class="text-primary font-semibold">95% - 12th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/4.png" alt="Pragya" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Pragya</h3>
+                    <p class="text-primary font-semibold">95% - 12th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/2.png" alt="Aanya" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Aanya</h3>
+                    <p class="text-primary font-semibold">90% - 12th CBSE</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/08/10.png" alt="Radhika" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Radhika</h3>
+                    <p class="text-primary font-semibold">91% - 12th CBSE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Why Choose Miracle Academy?</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Jaipur's Premier Coaching Institute since 2013
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/study-notes.jpg" alt="Comprehensive Notes" class="w-24 h-24 mx-auto mb-6 rounded-full">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Comprehensive Notes</h3>
+                    <p class="text-gray-600">
+                        Our top-quality materials are designed to help students excel in their studies. Extensive research has been conducted to ensure that the study material and notes are presented in a clear and up-to-date manner.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/mock-test.jpg" alt="Regular Tests" class="w-24 h-24 mx-auto mb-6 rounded-full">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Regular Tests And Doubt-Solving</h3>
+                    <p class="text-gray-600">
+                        Regular evaluations, whether they cover single concepts or entire subjects, are crucial to test achievement. We also offer realistic practice examinations!
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2024/05/mobile-learning-app.jpg" alt="Student First Approach" class="w-24 h-24 mx-auto mb-6 rounded-full">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Student First Approach</h3>
+                    <p class="text-gray-600">
+                        Our strategy involves personal student support. New teaching methods, easy class schedules, personalised attention, one-on-one counselling, and additional advantages are our priorities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">What Students Say</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Hear from our students and parents
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "For NEET preparation, Mirachel Academy's Tuition Classes in Murlipura is a great choice. Excellent curriculum and study materials. Teachers know their subjects well and teach well. Teacher guidance and motivation will help me pass NEET."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Bharti Sharma</h4>
+                            <p class="text-primary">NEET Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Our Ambabari coaching and tuition centre has top tutors and proven tactics that boost test success. I recommend this course for 12th Commerce Accounts students who want a focused learning experience and great results!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Yogita</h4>
+                            <p class="text-primary">12th Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Mirachel Academy offers top-notch coaching for JEE exam preparation. Our expert teachers and well-planned tactics ensure a laser-focussed learning experience that encourages students to succeed. I highly recommend them for JEE success."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">YashPal Singh</h4>
+                            <p class="text-primary">JEE Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Since enrolling in Miracle Academy's Class 9 Tuition in Jaipur, my studies have undergone a remarkable transformation. Science and Maths used to be quite challenging for me, but once I started attending their classes, everything became much more manageable."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Girdhari</h4>
+                            <p class="text-primary">9th Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Frequently Asked Questions</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Find answers to common questions about our academy
+                </p>
+            </div>
+            <div class="space-y-4" x-data="{ active: 0 }">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button @click="active === 1 ? active = 0 : active = 1" class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-gray-800">What is Miracle Academy?</h3>
+                        <i :class="active === 1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-primary"></i>
+                    </button>
+                    <div x-show="active === 1" class="px-6 pb-6 text-gray-600">
+                        <p>Miracle Academy is a leading coaching center in Murlipura, Jaipur, dedicated to providing high-quality education and personalized learning experiences. We offer coaching and tuition classes for various subjects and competitive exams.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button @click="active === 2 ? active = 0 : active = 2" class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-gray-800">Why should I choose Miracle Academy?</h3>
+                        <i :class="active === 2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-primary"></i>
+                    </button>
+                    <div x-show="active === 2" class="px-6 pb-6 text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Expert and experienced faculty</li>
+                            <li>Personalized attention with small batch sizes</li>
+                            <li>Regular assessments and doubt-solving sessions</li>
+                            <li>Affordable fees and scholarships for deserving students</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button @click="active === 3 ? active = 0 : active = 3" class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-gray-800">What makes Miracle Academy the best choice for students?</h3>
+                        <i :class="active === 3 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-primary"></i>
+                    </button>
+                    <div x-show="active === 3" class="px-6 pb-6 text-gray-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Highly experienced and qualified faculty</li>
+                            <li>Small batch sizes for personalized attention</li>
+                            <li>Regular mock tests, assignments, and performance tracking</li>
+                            <li>Affordable fees with scholarship opportunities</li>
+                            <li>A disciplined and motivating learning environment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button @click="active === 4 ? active = 0 : active = 4" class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-gray-800">Do you conduct tests and assessments?</h3>
+                        <i :class="active === 4 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-primary"></i>
+                    </button>
+                    <div x-show="active === 4" class="px-6 pb-6 text-gray-600">
+                        <p>Absolutely! To track student performance, we conduct:</p>
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li>Weekly tests</li>
+                            <li>Monthly assessments</li>
+                            <li>Mock exams (for competitive exams)</li>
+                            <li>Parent-teacher meetings to discuss student progress</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button @click="active === 5 ? active = 0 : active = 5" class="w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="text-lg font-medium text-gray-800">Do you provide specialized JEE Coaching?</h3>
+                        <i :class="active === 5 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-primary"></i>
+                    </button>
+                    <div x-show="active === 5" class="px-6 pb-6 text-gray-600">
+                        <p>Yes! We are a top choice for <strong>JEE Coaching in Jaipur</strong>, with:</p>
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li>Experienced IIT-qualified faculty</li>
+                            <li>Complete syllabus coverage for JEE Mains & Advanced</li>
+                            <li>Regular doubt-solving sessions</li>
+                            <li>Daily practice problems (DPPs) & mock tests</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get Free Consultation</h2>
+                    <p class="text-gray-600 mb-8">Have any questions for us? Drop us your inquiry and our teaching faculty expert will connect with you soon.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="name">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="phone">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="message">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 flex items-center">
+                    <img src="https://themiracleacademy.in/wp-content/uploads/2025/01/coaching-1.png" alt="Contact" class="rounded-lg shadow-xl max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img class="h-12 w-auto" src="https://themiracleacademy.in/wp-content/uploads/2021/07/footer-link.png" alt="Miracle Academy">
+                        <span class="ml-3 text-xl font-bold">The Miracle Academy</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Established in 2013, The Miracle Academy is Jaipur's first Artificial Intelligence (AI) learning-based academy for students. We offer comprehensive learning curve solutions to our students to cater quality education while sitting at home.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Courses</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">NEET Coaching Institute in Jaipur</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">JEE Coaching in Jaipur</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">RBSE Tuition Classes in Jaipur</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cbse tuition classes in Jaipur</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Important Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Career Counselling in Jaipur</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Miracle Academy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Miracle Helping Foundation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Map</h3>
+                    <div class="bg-gray-700 rounded-lg h-48 flex items-center justify-center">
+                        <span class="text-gray-400">Map Placeholder</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <p class="text-gray-400">© 2024 The Miracle Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        document.getElementById('about-mobile-button').addEventListener('click', function() {
+            const menu = document.getElementById('about-mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        document.getElementById('courses-mobile-button').addEventListener('click', function() {
+            const menu = document.getElementById('courses-mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
